@@ -1,0 +1,16 @@
+version: '2.2'
+
+services:
+  kafkaserver:
+    build:
+      context: .
+      dockerfile: ./docker/kafkaserver/Dockerfile
+    image: kafkaserver
+    ports:
+      - "9092:9092"
+  kafkaclient:
+    build:
+      context: .
+      dockerfile: ./docker/kafkaclient/Dockerfile
+    image: kafkaclient
+    init: true
